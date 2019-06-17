@@ -84,6 +84,10 @@ export class AboutComponent implements OnInit {
         console.log(err)
       })
    }
+  //  获取当前行的数据
+  delkey(e){
+    console.log(e);
+  }
   ngOnInit() {
     this.usertext();
     this.userlist();
