@@ -9,41 +9,73 @@ export class HomeComponent implements OnInit {
   isCollapsed:any;
   // 给子组件传值
   @ViewChild('text') text: any;
-  navlist: any = [
+  // navlist: any = [
+  //   {
+  //     id:"1",
+  //     title:"home1",
+  //     icon:"user",
+  //     list:[
+  //       {
+  //         id:"1",
+  //         title:"about",
+  //         path:"about",
+  //       },
+  //       {
+  //         id:"1",
+  //         title:"class",
+  //         path:"class",
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     id:"2",
+  //     title:"home2",
+  //     icon:"bars",
+  //     list:[
+  //       {
+  //         id:"1",
+  //         title:"home1",
+  //         path:"/home1",
+  //       },
+  //       {
+  //         id:"1",
+  //         title:"home2",
+  //         path:"/home3",
+  //       }
+  //     ]
+  //   }
+  // ]
+  items: any = [
     {
-      id:"1",
-      title:"home1",
-      icon:"user",
-      list:[
-        {
-          id:"1",
-          title:"about",
-          path:"about",
-        },
-        {
-          id:"1",
-          title:"class",
-          path:"class",
-        }
-      ]
+      id:0,
+      title:"首页",
+      icon:"home",
+      path:"echerts",
     },
     {
-      id:"2",
-      title:"home2",
-      icon:"bars",
-      list:[
-        {
-          id:"1",
-          title:"home1",
-          path:"/home1",
-        },
-        {
-          id:"1",
-          title:"home2",
-          path:"/home3",
-        }
-      ]
-    }
+      id:1,
+      title:"个人信息",
+      icon:"smile",
+      path:"class",
+    },
+    {
+      id:2,
+      title:"修改密码",
+      icon:"tool",
+      path:"about",
+    },
+    {
+      id:3,
+      title:"产品管理",
+      icon:"cloud-server",
+      path:"product",
+    },
+    {
+      id:4,
+      title:"结算统计",
+      icon:"dot-chart",
+      path:"statistics",
+    },
   ]
   constructor( public storage:StorageService) { }
   menu(){
@@ -51,9 +83,9 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
   }
-  navtext(e){
+  navtext(e){ 
     this.text = e.target.innerText;
-    this.storage.set("user",this.text);
+    this.storage.set("navlist",this.text);
   }
 
 }

@@ -1,4 +1,25 @@
-<p>
+<!-- <p>
   login works!
   <span  [routerLink]="[ '/home' ]">namea>445</span>
-</p>
+</p> -->
+<div class="login"> 
+  <div class="content">
+      <div class="gutter-example">
+          <div nz-row nzGutter="16">
+            <div nz-col class="gutter-row" nzSpan="24">
+              <h2>商户登录</h2>
+            </div>
+            <div nz-col class="gutter-row" nzSpan="24" >
+                <input nz-input placeholder="请输入账户" nzSize="large"  [(ngModel)]="username"/>
+            </div>
+            <div nz-col class="gutter-row" nzSpan="24">
+                <input nz-input placeholder="请输入密码" type="password" nzSize="large" [(ngModel)]="password" />
+            </div>
+            <div nz-col class="gutter-row" nzSpan="24">
+                <button nz-button nzType="primary" (click)="login()">登录</button>
+            </div>
+          </div>
+        </div>
+        <app-message #father [error]= "error" [success]= "success" [run]= "run" ></app-message>
+  </div>
+</div>

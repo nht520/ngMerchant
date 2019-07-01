@@ -5,6 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 import { EchertsComponent } from './components/echerts/echerts.component';
 import { ClassComponent } from './components/class/class.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { ProductComponent } from './components/product/product.component';
 const routes: Routes = [
   {
     path :'',
@@ -25,6 +27,14 @@ const routes: Routes = [
       {
         path :'class',
         component : ClassComponent
+      },
+      {
+        path :'statistics',
+        component : StatisticsComponent
+      },
+      {
+        path :'product',
+        component : ProductComponent
       },
       // 路由默认页面
       {

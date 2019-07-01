@@ -7,14 +7,14 @@ import { StorageService } from '../../services/storage.service'
 })
 export class ClassComponent implements OnInit {
   crumbstitle:any = "个人信息";
-  text:any;
+  text:any ;
   constructor(public storage:StorageService) { }
 
   ngOnInit() {
     this.usertext();
   }
   usertext(){
-    this.text = this.storage.get("user");
+    this.text = this.storage.get("navlist");
   }
 
 }

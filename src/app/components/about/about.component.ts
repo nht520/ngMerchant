@@ -18,7 +18,7 @@ export class AboutComponent implements OnInit {
   ]
   constructor(public storage:StorageService, public busurl:BesurlService) { }
   usertext(){
-    this.text = this.storage.get("user");
+    this.text = this.storage.get("navlist");
   }
 
   listOfSelection = [
@@ -76,7 +76,7 @@ export class AboutComponent implements OnInit {
   }
   // 列表 
    userlist(){
-      const api = this.busurl.window.stockLog;
+      const api = this.busurl.window.productPackage;
       Axios.get(api).then((res)=>{
         console.log(res)
         this.list=res.data.records;
@@ -85,6 +85,10 @@ export class AboutComponent implements OnInit {
       })
    }
   //  获取当前行的数据
+  examine(e){
+    console.log(e);
+  }
+  // 删除当前行数据
   delkey(e){
     console.log(e);
   }

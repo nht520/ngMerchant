@@ -23,6 +23,9 @@ import { AboutComponent } from './components/about/about.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { EchertsComponent } from './components/echerts/echerts.component';
 import { ClassComponent } from './components/class/class.component';
+import { MessageComponent } from './components/message/message.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { ProductComponent } from './components/product/product.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -34,6 +37,9 @@ registerLocaleData(en);
     BreadcrumbComponent,
     EchertsComponent,
     ClassComponent,
+    MessageComponent,
+    StatisticsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

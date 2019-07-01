@@ -3,43 +3,43 @@
 <div id="bodypading">
   <!-- 搜索 -->
     <div nz-row class="search">
-      <div nz-col nzSpan="2">
-          <nz-tooltip nzTrigger="focus" nzPlacement="topLeft" nzOverlayClassName="numeric-input" [nzTitle]="title">
-              <input
-                #inputElement
-                style="width: 120px"
-                nz-input
-                nz-tooltip
-                placeholder="Input a number"
-                [(ngModel)]="value1"
-              />
-          </nz-tooltip>
-      </div>
-      <div nz-col nzSpan="2">
-          <nz-tooltip nzTrigger="focus" nzPlacement="topLeft" nzOverlayClassName="numeric-input" [nzTitle]="title">
-              <input
-                #inputElement
-                style="width: 120px"
-                nz-input
-                nz-tooltip
-                placeholder="Input a number"
-                [(ngModel)]="value2"
-              />
-          </nz-tooltip>
-      </div>
-      <div nz-col nzSpan="2">
-          <nz-select style="width: 120px;" [(ngModel)]="selectedValue" nzAllowClear nzPlaceHolder="Choose">
-              <nz-option *ngFor="let item of seletclabe; let key=index " nzValue="{{item}}" nzLabel="{{item}}"></nz-option>
-          </nz-select>
-      </div>
-      <div nz-col nzSpan="1">
-          <button nz-button nzType="primary" (click)="searchClick()">
-            <i nz-icon type="search"></i>Search
-          </button>
-      </div>
+        <div nz-col nzSpan="2">
+            <nz-tooltip nzTrigger="focus" nzPlacement="topLeft" nzOverlayClassName="numeric-input" [nzTitle]="title">
+                <input
+                  #inputElement
+                  style="width: 120px"
+                  nz-input
+                  nz-tooltip
+                  placeholder="Input a number"
+                  [(ngModel)]="value1"
+                />
+            </nz-tooltip>
+        </div>
+        <div nz-col nzSpan="2">
+            <nz-tooltip nzTrigger="focus" nzPlacement="topLeft" nzOverlayClassName="numeric-input" [nzTitle]="title">
+                <input
+                  #inputElement
+                  style="width: 120px"
+                  nz-input
+                  nz-tooltip
+                  placeholder="Input a number"
+                  [(ngModel)]="value2"
+                />
+            </nz-tooltip>
+        </div>
+        <div nz-col nzSpan="2">
+            <nz-select style="width: 120px;" [(ngModel)]="selectedValue" nzAllowClear nzPlaceHolder="Choose">
+                <nz-option *ngFor="let item of seletclabe; let key=index " nzValue="{{item}}" nzLabel="{{item}}"></nz-option>
+            </nz-select>
+        </div>
+        <div nz-col nzSpan="1">
+            <button nz-button nzType="primary" (click)="searchClick()">
+              <i nz-icon type="search"></i>Search
+            </button>
+        </div>
     </div>
-  <!--  -->
-      <nz-table
+  <!-- 表格 -->
+    <nz-table
       #rowSelectionTable
       nzShowSizeChanger
       [nzData]="list"
@@ -59,20 +59,22 @@
           <th>iphone</th>
           <th>Address</th>
           <th>Action</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of rowSelectionTable.data; let key=index">
+        <tr *ngFor="let item of list; let key=index">
           <td nzShowCheckbox [(nzChecked)]="mapOfCheckedId[item.id]" (nzCheckedChange)="refreshStatus()"></td>
-          <td>{{ item.selfMemberEntity.memberName }}</td>
-          <td>{{ item.selfMemberEntity.memberPhone }}</td>
-          <td>{{ item.buyTime }}</td>
+          <td>{{ item.spMerchantAgent }}</td>
+          <td>{{ item.spMerchantMobile }}</td>
+          <td>{{ item.spMerchantType }}</td>
+          <td>{{ item.spCreateDate }}</td>
           <td>
-            <span (click)="delkey(item)">查看</span>           
+            <span (click)="examine(item)">查看</span>           
             <nz-divider nzType="vertical"></nz-divider>
             <span>编辑</span>
             <nz-divider nzType="vertical"></nz-divider>
-            <span style = "color: #f00">删除</span>
+            <span (click)="delkey(item)" style = "color: #f00">删除</span>
           </td>
         </tr>
       </tbody>

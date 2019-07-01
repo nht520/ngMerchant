@@ -1,0 +1,30 @@
+.login{
+    width: 100%;
+    height: 100%;
+    background: #1b2438;
+    position: absolute;
+    .content{
+        background: #ffffff;
+        text-align: center;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        /* 1.要求自身内容相对包含块居中 */
+        margin: auto;
+        /* 2.给出自身宽高计算方式 */
+        width: 500px; height: 380px;
+        border-radius: 5px;
+        & input{
+            width: 70%;
+            margin-top: 5%;
+        }
+        & button{
+            width: 70%;
+            height: 45px;
+            margin-top: 8%;
+        }
+        & h2{
+            margin-top: 10%;
+            font-weight: bold;
+        }
+    }
+}

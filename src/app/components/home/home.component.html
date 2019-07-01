@@ -4,24 +4,28 @@
         <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" >
           <div class="logo"></div>
           <ul nz-menu [nzTheme]="'light'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
-            <li nz-menu-item  [routerLink]="[ '/home/echerts' ]">
+         
+            <li nz-menu-item 
+            *ngFor="let item of items, let key=index;"  [routerLink]="item.path"
+            (click)="navtext($event)"
+            >
               <span>
-                <i nz-icon type="home"></i>
-                <span class="nav-text">Home</span>
+                <i nz-icon type="{{item.icon}}"></i>
+                <span class="nav-text">{{item.title}}</span>
               </span>
             </li>
-            <li nz-submenu *ngFor="let item of navlist">
+            <!-- 二级菜单 [ '/home/echerts' ]-->
+            <!-- <li nz-submenu *ngFor="let item of navlist">
               <span title>
                 <i nz-icon type="{{item.icon}}"></i>
                 <span class="nav-text">{{item.title}}</span>
               </span>
               <ul>
-                <!-- <li nz-menu-item *ngFor="let v of item.list"  [routerLink]="[ '/echerts' ]" > -->
                 <li nz-menu-item *ngFor="let v of item.list"  routerLink="{{v.path}}" (click)="navtext($event)">
                   {{v.title}}
                 </li>
               </ul>
-            </li>
+            </li> -->
           </ul>
         </nz-sider>
         <nz-layout>
