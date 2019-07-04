@@ -2,9 +2,12 @@
 <nz-layout>
   <!-- 侧边栏  -->
         <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" >
-          <div class="logo"></div>
+          <!-- logo -->
+          <div class="logo">
+              <span>LOGO</span>
+          </div>
+          <!-- 导航 -->
           <ul nz-menu [nzTheme]="'light'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
-         
             <li nz-menu-item 
             *ngFor="let item of items, let key=index;"  [routerLink]="item.path"
             (click)="navtext($event)"

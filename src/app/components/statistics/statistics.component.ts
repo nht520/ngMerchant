@@ -49,9 +49,6 @@ export class StatisticsComponent implements OnInit {
   searchClick(){
      console.log(this.timeone+this.timetwo)
   }
-  // getWeek(result: Date): void {
-  //   console.log('week: ', getISOWeek(result));
-  // }
-
+ 
 
 }
