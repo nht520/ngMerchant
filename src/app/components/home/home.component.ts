@@ -62,13 +62,13 @@ export class HomeComponent implements OnInit {
       id:2,
       title:"修改密码",
       icon:"tool",
-      path:"about",
+      path:"product",
     },
     {
       id:3,
       title:"产品管理",
       icon:"cloud-server",
-      path:"product",
+      path:"about",
     },
     {
       id:4,

@@ -3,9 +3,13 @@ import { NgModule } from '@angular/core';
 // 引用服务
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import Axios from 'axios';
 // 外部ui库
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+// import module
+import { ElModule } from 'element-angular'
+// if you use webpack, import style
+import 'element-angular/theme/index.css'
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,6 +52,7 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     NgZorroAntdModule,
+    ElModule.forRoot(),
   ],
   providers: [
       StorageService,BesurlService,

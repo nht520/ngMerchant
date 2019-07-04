@@ -1,5 +1,40 @@
 <!-- 面包屑 -->
 <app-breadcrumb  [crumbstitle]= "crumbstitle" [text]= "text"></app-breadcrumb>
 <div id="bodypading">
-  <h1>123132</h1>
+    <div class="gutter-example">
+        <div nz-row nzGutter="16">
+          <div nz-col class="gutter-row" nzSpan="24">
+            <div class="gutter-box">
+                <div class="gutter-box">
+                    <nz-form-label [nzSm]="2" [nzXs]="24" nzRequired nzFor="email">原密码</nz-form-label>
+                    <input nz-input placeholder="请输入原密码" [(ngModel)]="value" />
+               </div>
+            </div>
+          </div>
+          <div nz-col class="gutter-row" nzSpan="24">
+              <div class="gutter-box">
+                  <div class="gutter-box">
+                      <nz-form-label [nzSm]="2" [nzXs]="24" nzRequired nzFor="email">新密码</nz-form-label>
+                      <input nz-input placeholder="请输入新密码" [(ngModel)]="value" />
+                 </div>
+              </div>
+            </div>
+          <div nz-col class="gutter-row" nzSpan="24">
+              <div class="gutter-box">
+                  <div class="gutter-box">
+                      <nz-form-label [nzSm]="2" [nzXs]="24" nzRequired nzFor="email">确认密码</nz-form-label>
+                      <input nz-input placeholder="请输入新密码" [(ngModel)]="value" />
+                 </div>
+              </div>
+          </div>
+            <div nz-col class="gutter-row" nzSpan="24">
+                <div class="gutter-box">
+                    <div class="gutter-box">
+                        <nz-form-label [nzSm]="2"></nz-form-label>
+                       <button  nz-button nzType="primary">提交</button>
+                   </div>
+                </div>
+              </div>
+        </div>
+      </div>
 </div>

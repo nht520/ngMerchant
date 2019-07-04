@@ -3,34 +3,25 @@
 <div id="bodypading">
   <!-- 搜索 -->
     <div nz-row class="search">
-        <div nz-col nzSpan="2">
-            <nz-tooltip nzTrigger="focus" nzPlacement="topLeft" nzOverlayClassName="numeric-input" [nzTitle]="title">
-                <input
-                  #inputElement
-                  style="width: 120px"
-                  nz-input
-                  nz-tooltip
-                  placeholder="Input a number"
-                  [(ngModel)]="value1"
-                />
-            </nz-tooltip>
+        <div nz-col nzSpan="3">
+            <div class="aboutinput">
+                <el-input [(ngModel)]="value1"  placeholder="请输入内容"></el-input>
+            </div>
         </div>
-        <div nz-col nzSpan="2">
-            <nz-tooltip nzTrigger="focus" nzPlacement="topLeft" nzOverlayClassName="numeric-input" [nzTitle]="title">
-                <input
-                  #inputElement
-                  style="width: 120px"
-                  nz-input
-                  nz-tooltip
-                  placeholder="Input a number"
-                  [(ngModel)]="value2"
-                />
-            </nz-tooltip>
+        <div nz-col nzSpan="3">
+          <div class="aboutinput">
+              <el-input  [(ngModel)]="value2"  placeholder="请输入内容"></el-input>
+          </div>
         </div>
-        <div nz-col nzSpan="2">
-            <nz-select style="width: 120px;" [(ngModel)]="selectedValue" nzAllowClear nzPlaceHolder="Choose">
-                <nz-option *ngFor="let item of seletclabe; let key=index " nzValue="{{item}}" nzLabel="{{item}}"></nz-option>
-            </nz-select>
+        <div nz-col nzSpan="3">
+          <div class="aboutinput">
+            <el-select [model]="selectedValue" placeholder="请选择" (modelChange)="handle($event)">
+                <el-option *ngFor="let item of seletclabe"
+                  [label]="item"
+                  [value]="item">
+                </el-option>
+            </el-select>
+          </div>
         </div>
         <div nz-col nzSpan="1">
             <button nz-button nzType="primary" (click)="searchClick()">
@@ -39,43 +30,29 @@
         </div>
     </div>
   <!-- 表格 -->
-    <nz-table
-      #rowSelectionTable
-      nzShowSizeChanger
-      [nzData]="list"
-      (nzCurrentPageDataChange)="currentPageDataChange($event)"
-    >
+    <nz-table [nzData]="list"   >
       <thead>
         <tr>
-          <th
-            nzShowCheckbox
-            nzShowRowSelection
-            [nzSelections]="listOfSelection"
-            [(nzChecked)]="isAllDisplayDataChecked"
-            [nzIndeterminate]="isIndeterminate"
-            (nzCheckedChange)="checkAll($event)"
-          ></th>
-          <th>Name</th>
-          <th>iphone</th>
-          <th>Address</th>
-          <th>Action</th>
-          <th>操作</th>
+          <th>包编号</th>
+          <th>产品类型</th>
+          <th>产品地址</th>
+          <th>状态</th>
+          <!-- <th>操作</th> -->
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of list; let key=index">
-          <td nzShowCheckbox [(nzChecked)]="mapOfCheckedId[item.id]" (nzCheckedChange)="refreshStatus()"></td>
           <td>{{ item.spMerchantAgent }}</td>
-          <td>{{ item.spMerchantMobile }}</td>
+          <td>{{ item.spCreateDate }}</td>
           <td>{{ item.spMerchantType }}</td>
           <td>{{ item.spCreateDate }}</td>
-          <td>
+          <!-- <td>
             <span (click)="examine(item)">查看</span>           
             <nz-divider nzType="vertical"></nz-divider>
             <span>编辑</span>
             <nz-divider nzType="vertical"></nz-divider>
             <span (click)="delkey(item)" style = "color: #f00">删除</span>
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </nz-table>

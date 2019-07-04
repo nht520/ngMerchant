@@ -18,10 +18,10 @@ export class LoginComponent implements OnInit {
     private message: NzMessageService,
     public storage:StorageService) { }
   ngOnInit() {
+    this.ifusername()
   }
   
   login(){
-
      const api = this.besurl.window.login;
     // const fileForm = new FormData();
     //     fileForm.append('username', this.username);
@@ -45,6 +45,14 @@ export class LoginComponent implements OnInit {
   }
   run(){
     console.log("1111111")
+  }
+  ifusername(){
+    const name = this.storage.get("user");
+    if( name === null || name === undefined){
+      this.router.navigate(['']);
+    }else{
+      this.router.navigate(['/home']);
+    }
   }
  
 

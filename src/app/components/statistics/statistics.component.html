@@ -1,3 +1,70 @@
-<p>
-  统计
-</p>
+<!-- 面包屑 -->
+<app-breadcrumb  [crumbstitle]= "crumbstitle" [text]= "text"></app-breadcrumb>
+<div id="bodypading">
+    <!-- 搜索 -->
+    <div nz-row class="search">
+        <div nz-col nzSpan="4">
+            <el-date-picker
+                (modelChange)="handle($event)"
+                (clear-click)="clearClickHandle($event)">
+            </el-date-picker>
+        </div>
+        <div nz-col nzSpan="4">
+            <el-date-picker
+                (modelChange)="handone($event)"
+                (clear-click)="clearClickHandle($event)">
+            </el-date-picker>
+        </div>
+        <div nz-col nzSpan="2">
+            <button  nz-button nzType="primary" (click)="searchClick()">
+                <i nz-icon type="search"></i>搜索
+            </button>
+        </div>
+    </div>
+    <!-- 表格 -->
+    <nz-table [nzData]="list"  >
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>笔数</th>
+                <th>收益</th>
+                <th>app笔数</th>
+                <th>app收益</th>
+                <th>h5笔数</th>
+                <th>h5收益</th>
+                <th>安装量</th>     
+                <th>UA</th>
+                <th>App > Ap</th>
+                <th>H5 > Ap</th>
+                <th>状态</th>
+            <!-- <th>操作</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of list; let key=index">
+            <td>{{ item.spMerchantAgent }}</td>
+            <td>{{ item.spMerchantType }}</td>
+            <td>{{ item.spMerchantType }}</td>
+            <td>{{ item.spMerchantType }}</td>
+            <td>{{ item.spMerchantAgent }}</td>
+            <td>{{ item.spMerchantType }}</td>
+            <td>{{ item.spMerchantType }}</td>
+            <td>{{ item.spMerchantType }}</td>
+            <td>{{ item.spMerchantAgent }}</td>
+            <td>{{ item.spMerchantType }}</td>
+            <td>{{ item.spMerchantType }}</td>
+            <td>
+                <span style="color:#f00">{{ item.spMerchantNo }}</span>
+                <span style="color:#3db701">{{ item.spMerchantNo }}</span>
+            </td>
+            <!-- <td>
+                <span (click)="examine(item)">查看</span>           
+                <nz-divider nzType="vertical"></nz-divider>
+                <span>编辑</span>
+                <nz-divider nzType="vertical"></nz-divider>
+                <span (click)="delkey(item)" style = "color: #f00">删除</span>
+            </td> -->
+            </tr>
+        </tbody>
+    </nz-table>
+</div>

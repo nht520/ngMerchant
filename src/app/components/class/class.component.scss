@@ -1,0 +1,11 @@
+#bodypading{
+    padding: 2% 3%;
+    & input{
+        width: 30%;
+        margin-bottom: 2%;
+    }
+    & button{
+        width: 30%;
+        height: 40px;
+    }
+}

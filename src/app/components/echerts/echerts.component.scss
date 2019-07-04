@@ -1,0 +1,44 @@
+.gutter-boxone {
+    background-image: linear-gradient(230deg, #759bff, #843cf6);
+    height: 160px;
+    border-radius: 5px;
+    padding: 5% 8%;
+    & h1,h3{
+        color: #ffffff;
+    }
+  }
+.gutter-boxtwo {
+    background-image: linear-gradient(230deg, #0e4cfd, #6a8eff);
+    height: 160px;
+    border-radius: 5px;
+    padding: 5%;
+    & h1,h3{
+        color: #ffffff;
+    }
+}
+.gutter-box{
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
+    border-radius: 100%;
+    text-align: center;
+}
+.nz-page-header {
+    border: 1px solid rgb(235, 237, 240);
+}
+.ant-page-header{
+    padding: 0px;
+}
+.announcement{
+    & .ant-page-header{
+        background:0px !important;
+        margin-top: 1%;
+        // background: #efefef82 !important;
+        border-bottom: 1px solid #efefef82;
+        padding: 1%;
+        border-radius: 5px;
+    }
+    & ol li{
+        margin-top: 1%;
+    }
+}

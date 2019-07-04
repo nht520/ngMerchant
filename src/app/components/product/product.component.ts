@@ -6,7 +6,7 @@ import { StorageService } from '../../services/storage.service';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  crumbstitle:any = "产品管理";
+  crumbstitle:any = "修改密码";
   text:any;
   constructor(  public storage:StorageService) { }
 
