@@ -22,20 +22,46 @@
     </div>
   </div>
   <!-- 表格 -->
-  <nz-table [nzData]="list"  >
+
+  <el-table 
+  [model]="list" >
+    <el-table-column model-key="packageNo" label="姓名">
+    </el-table-column>
+    <el-table-column model-key="revenue" label="日期" >
+    </el-table-column>
+    <el-table-column model-key="date" label="地址"  [render-html]="true">
+    </el-table-column>
+  </el-table>
+  <!-- 分业 -->
+  <ul class="list">
+    <li>
+      <el-pagination [total]="total"
+      (modelChange)="nav($event)"
+      [layout]="['prev', 'pager', 'next', 'total']">
+      </el-pagination>
+    </li>
+  </ul>
+  
+<!--   
+  <nz-table 
+  
+  [nzTotal]="total"
+  [(nzPageIndex)]="pageIndex"
+  [(nzPageSize)]="pageSize"
+  [nzData]="list"  >
     <thead>
     <tr>
       <th>日期</th>
       <th>包名</th>
       <th>收益</th>
-      <!-- <th>操作</th> -->
-    </tr>
+      <th>操作</th> -->
+    <!-- </tr>
     </thead>
     <tbody>
     <tr *ngFor="let item of list; let key=index">
       <td>{{ item.date }}</td>
       <td>{{ item.packageNo }}</td>
-      <td>{{ item.revenue }}</td>
+      <td>{{ item.revenue }}</td> -->
       <!-- <td>
           <span (click)="examine(item)">查看</span>
           <nz-divider nzType="vertical"></nz-divider>
@@ -43,7 +69,7 @@
           <nz-divider nzType="vertical"></nz-divider>
           <span (click)="delkey(item)" style = "color: #f00">删除</span>
       </td> -->
-    </tr>
+    <!-- </tr>
     </tbody>
-  </nz-table>
+  </nz-table> -->
 </div>
