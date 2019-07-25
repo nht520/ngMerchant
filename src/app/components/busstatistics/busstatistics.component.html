@@ -1,5 +1,6 @@
-<!-- 面包屑 -->
+<!-- 面包屑 给子组件传值-->
 <app-breadcrumb  [crumbstitle]= "crumbstitle" [text]= "text"></app-breadcrumb>
+<!--  -->
 <div id="bodypading">
     <!-- 搜索 -->
     <div nz-row class="search">
@@ -25,12 +26,10 @@
     <nz-table [nzData]="list"  >
         <thead>
             <tr>
+                <th>时间</th>
                 <th>包名</th>
-                <th>日期</th>
-                <th>笔数</th>
+                <th>UV</th>
                 <th>收益</th>
-                <th>用户量</th>     
-                <th>状态</th>
             <!-- <th>操作</th> -->
             </tr>
         </thead>
@@ -38,14 +37,12 @@
             <tr *ngFor="let item of list; let key=index">
             <td>{{ item.spMerchantAgent }}</td>
             <td>{{ item.spMerchantAgent }}</td>
-            <td>{{ item.spMerchantType }}</td>
-            <td>{{ item.spMerchantType }}</td>
-            <td>{{ item.spMerchantType }}</td>
+            <td>{{ item.spMerchantAgent }}</td>
             <td>
                 <span style="color:#f00">{{ item.spMerchantNo }}</span>
                 <span style="color:#3db701">{{ item.spMerchantNo }}</span>
             </td>
-            <!-- <td>
+          <!-- <td>
                 <span (click)="examine(item)">查看</span>           
                 <nz-divider nzType="vertical"></nz-divider>
                 <span>编辑</span>

@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import { StorageService } from '../../services/storage.service'
+import { StorageService } from '../../services/storage.service';
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,6 +8,7 @@ import { StorageService } from '../../services/storage.service'
 })
 export class HomeComponent implements OnInit {
   isCollapsed:any;
+  username:any;
   // 给子组件传值
   @ViewChild('text') text: any;
   // navlist: any = [
@@ -76,16 +78,35 @@ export class HomeComponent implements OnInit {
       icon:"dot-chart",
       path:"statistics",
     },
+    {
+      id:4,
+      title:"统计",
+      icon:"area-chart",
+      path:"busstatistics",
+    },
   ]
-  constructor( public storage:StorageService) { }
+  constructor( public storage:StorageService, public router:Router,) { }
   menu(){
     this.isCollapsed = !this.isCollapsed;
   }
   ngOnInit() {
+    this.ifusername()
   }
   navtext(e){ 
     this.text = e.target.innerText;
     this.storage.set("navlist",this.text);
+  }
+  // 退出
+  userclose(){
+    this.storage.remove("user");
+    this.ifusername();
+  }
+  // 拍断用户是否登录
+  ifusername(){
+   this.username = this.storage.get("user");
+   if(this.username === "" || this.username === null ||this.username === undefined){
+    this.router.navigate(['']);
+   }
   }
 
 }

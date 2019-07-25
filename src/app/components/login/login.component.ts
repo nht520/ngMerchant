@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
   run(){
     console.log("1111111")
   }
+  // 判断用户是否登录
   ifusername(){
     const name = this.storage.get("user");
     if( name === null || name === undefined){

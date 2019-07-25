@@ -4,14 +4,16 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class BesurlService {
-  api: any = 'http://2h1037w727.51mypc.cn:41884';
-  // domainone:string = 'http://wx.bomao.xyz:8181/distributor';
+  api: any = 'http://47.75.163.229:9999';
   constructor(public http: HttpClient) { }
   window: any = {
     AXIOS_TIMEOUT: 10000,
     login:this.api+"/login",
     productPackage:this.api+'/merchant',
+    //统计渠道概述【日期】
+    channelsummzrize:this.api+'/report/channelOverview',
   }
+
   // 封装方法
   // get(api) {
   //   return new Promise((resolve, reject) => {
