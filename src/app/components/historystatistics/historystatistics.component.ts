@@ -19,7 +19,7 @@ export class HistorystatisticsComponent implements OnInit {
   size = 10;
   total:any;
   model = 1;
-  pages:any;
+  pages:any=[];
 
   constructor( public storage:StorageService, public busurl:BesurlService) { }
   usertext(){
@@ -73,5 +73,24 @@ export class HistorystatisticsComponent implements OnInit {
   // 搜索
   searchClick(){
     console.log(this.timeone+this.timetwo)
+    const api = this.busurl.window.daystatistics;
+    var param = {
+      params:{
+        channelId:this.storage.get("user").id,
+        current:1,
+        startTime:this.timeone,
+        endTime:this.timetwo,
+      }
+    };
+    Axios.get(api,param).then((res)=>{
+      console.log(res)
+      this.list=res.data.records;
+      this.current = res.data.pages;
+      this.size = res.data.size;
+      this.total = res.data.total;
+      this.model = res.data.current;
+    }).catch((err)=>{
+      console.log(err)
+    })
   }
 }
