@@ -30,6 +30,8 @@ import { ClassComponent } from './components/class/class.component';
 import { MessageComponent } from './components/message/message.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { ProductComponent } from './components/product/product.component';
+import { DaystatisticsComponent } from './components/daystatistics/daystatistics.component';
+import { HistorystatisticsComponent } from './components/historystatistics/historystatistics.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -43,7 +45,9 @@ registerLocaleData(en);
     ClassComponent,
     MessageComponent,
     StatisticsComponent,
-    ProductComponent
+    ProductComponent,
+    DaystatisticsComponent,
+    HistorystatisticsComponent
   ],
   imports: [
     BrowserModule,
