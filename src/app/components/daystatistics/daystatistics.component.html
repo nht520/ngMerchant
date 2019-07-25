@@ -1,0 +1,49 @@
+<!-- 面包屑 -->
+<app-breadcrumb  [crumbstitle]= "crumbstitle" [text]= "text"></app-breadcrumb>
+<div id="bodypading">
+  <!-- 搜索 -->
+<!--  <div nz-row class="search">-->
+<!--    <div nz-col nzSpan="4">-->
+<!--      <el-date-picker-->
+<!--        (modelChange)="handle($event)"-->
+<!--        (clear-click)="clearClickHandle($event)">-->
+<!--      </el-date-picker>-->
+<!--    </div>-->
+<!--    <div nz-col nzSpan="4">-->
+<!--      <el-date-picker-->
+<!--        (modelChange)="handone($event)"-->
+<!--        (clear-click)="clearClickHandle($event)">-->
+<!--      </el-date-picker>-->
+<!--    </div>-->
+<!--    <div nz-col nzSpan="2">-->
+<!--      <button  nz-button nzType="primary" (click)="searchClick()">-->
+<!--        <i nz-icon type="search"></i>搜索-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
+  <!-- 表格 -->
+  <nz-table [nzData]="list"  >
+    <thead>
+    <tr>
+      <th>日期</th>
+      <th>包名</th>
+      <th>收益</th>
+      <!-- <th>操作</th> -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of list; let key=index">
+      <td>{{ item.date }}</td>
+      <td>{{ item.packageNo }}</td>
+      <td>{{ item.revenue }}</td>
+      <!-- <td>
+          <span (click)="examine(item)">查看</span>
+          <nz-divider nzType="vertical"></nz-divider>
+          <span>编辑</span>
+          <nz-divider nzType="vertical"></nz-divider>
+          <span (click)="delkey(item)" style = "color: #f00">删除</span>
+      </td> -->
+    </tr>
+    </tbody>
+  </nz-table>
+</div>
