@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     //     fileForm.append('pwd', this.password);
       const from = new URLSearchParams();
             from.append("username",this.username);
-            from.append("pwd",this.password);
+            from.append("password",this.password);
       Axios.post(api,from).then((res)=>{
         console.log(res);
         const status = res.data.code;

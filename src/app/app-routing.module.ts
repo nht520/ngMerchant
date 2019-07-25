@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
-import { EchertsComponent } from './components/echerts/echerts.component';
+// import { EchertsComponent } from './components/echerts/echerts.component';
 import { ClassComponent } from './components/class/class.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { ProductComponent } from './components/product/product.component';
 import { BusstatisticsComponent } from './components/busstatistics/busstatistics.component';
+import { DaystatisticsComponent } from './components/daystatistics/daystatistics.component';
+import { HistorystatisticsComponent } from './components/historystatistics/historystatistics.component';
 const routes: Routes = [
   {
     path :'',
@@ -18,8 +20,12 @@ const routes: Routes = [
     component : HomeComponent,
     children: [
       {
-        path:'echerts',
-        component:EchertsComponent
+        path:'daystatistics',
+        component:DaystatisticsComponent
+      },
+      {
+        path :'historystatistics',
+        component : HistorystatisticsComponent
       },
       {
         path :'about',
@@ -44,12 +50,12 @@ const routes: Routes = [
       // 路由默认页面
       {
         path : '**',
-        redirectTo : 'echerts'
+        redirectTo : 'daystatistics'
       },
     ]
   },
   {
-    path: '**', redirectTo: 'echerts'
+    path: '**', redirectTo: 'daystatistics'
   }
 
 ];

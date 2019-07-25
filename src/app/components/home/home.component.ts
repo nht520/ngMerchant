@@ -50,33 +50,15 @@ export class HomeComponent implements OnInit {
   items: any = [
     {
       id:0,
-      title:"首页",
+      title:"今日统计",
       icon:"home",
-      path:"echerts",
+      path:"daystatistics",
     },
     {
       id:1,
-      title:"个人信息",
-      icon:"smile",
-      path:"class",
-    },
-    {
-      id:2,
-      title:"修改密码",
-      icon:"tool",
-      path:"product",
-    },
-    {
-      id:3,
-      title:"产品管理",
-      icon:"cloud-server",
-      path:"about",
-    },
-    {
-      id:4,
-      title:"结算统计",
-      icon:"dot-chart",
-      path:"statistics",
+      title:"历史统计",
+      icon:"home",
+      path:"historystatistics",
     },
     {
       id:4,
@@ -84,6 +66,36 @@ export class HomeComponent implements OnInit {
       icon:"area-chart",
       path:"busstatistics",
     },
+    // {
+    //   id:0,
+    //   title:"首页",
+    //   icon:"home",
+    //   path:"echerts",
+    // },
+    // {
+    //   id:1,
+    //   title:"个人信息",
+    //   icon:"smile",
+    //   path:"class",
+    // },
+    // {
+    //   id:2,
+    //   title:"修改密码",
+    //   icon:"tool",
+    //   path:"product",
+    // },
+    // {
+    //   id:3,
+    //   title:"产品管理",
+    //   icon:"cloud-server",
+    //   path:"about",
+    // },
+    // {
+    //   id:4,
+    //   title:"结算统计",
+    //   icon:"dot-chart",
+    //   path:"statistics",
+    // },
   ]
   constructor( public storage:StorageService, public router:Router,) { }
   menu(){
