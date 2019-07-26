@@ -49,6 +49,7 @@ export class HistorystatisticsComponent implements OnInit {
   }
 
   nav(e){
+    this.pages = e;
     const api = this.busurl.window.daystatistics;
     var param = {
       params:{
@@ -64,7 +65,6 @@ export class HistorystatisticsComponent implements OnInit {
       this.size = res.data.size;
       this.total = res.data.total;
       this.model = res.data.current;
-      
     }).catch((err)=>{
       console.log(err)
     })

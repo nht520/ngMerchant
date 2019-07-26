@@ -23,9 +23,9 @@
   </div>
   <!-- 表格 -->
   <el-table  [model]="list" >
-    <el-table-column model-key="packageNo" label="姓名"></el-table-column>
-    <el-table-column model-key="revenue" label="日期" > </el-table-column>
-    <el-table-column model-key="date" label="地址"  [render-html]="true"></el-table-column>
+    <el-table-column model-key="date" label="日期"  [render-html]="true"></el-table-column>
+    <el-table-column model-key="packageNo" label="包名"></el-table-column>
+    <el-table-column model-key="revenue" label="收益" > </el-table-column>
   </el-table>
   <div el-row class="statistics">
     <div el-col span="8">累计：1</div>
