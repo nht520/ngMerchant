@@ -12,3 +12,11 @@ body{
 .search{
     margin-bottom: 1%;
 }
+.el-table__body-wrapper, .el-table__footer-wrapper, .el-table__header-wrapper{
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    overflow: hidden !important;
+}
+.el-table__body-wrapper {
+    overflow: hidden !important;
+}

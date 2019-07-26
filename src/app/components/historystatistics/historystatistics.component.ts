@@ -60,11 +60,11 @@ export class HistorystatisticsComponent implements OnInit {
     Axios.get(api,param).then((res)=>{
       console.log(res)
       this.list=res.data.records;
-
       this.current = res.data.pages;
       this.size = res.data.size;
       this.total = res.data.total;
       this.model = res.data.current;
+      
     }).catch((err)=>{
       console.log(err)
     })
