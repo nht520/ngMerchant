@@ -60,12 +60,12 @@ export class HomeComponent implements OnInit {
       icon:"home",
       path:"historystatistics",
     },
-    {
-      id:4,
-      title:"统计",
-      icon:"area-chart",
-      path:"busstatistics",
-    },
+    // {
+    //   id:4,
+    //   title:"统计",
+    //   icon:"area-chart",
+    //   path:"busstatistics",
+    // },
     // {
     //   id:0,
     //   title:"首页",

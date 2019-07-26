@@ -30,12 +30,12 @@ export class HistorystatisticsComponent implements OnInit {
     this.userlist();
   }
   // 列表
-  userlist(e){
+  userlist(){
     const api = this.busurl.window.daystatistics;
     var param = {
       params:{
         channelId:this.storage.get("user").id,
-        current:e,
+
       }
     };
     Axios.get(api,param).then((res)=>{
@@ -54,7 +54,25 @@ export class HistorystatisticsComponent implements OnInit {
 
   nav(e){
     this.pages = e;
-    this.userlist(this.pages);
+    const api = this.busurl.window.daystatistics;
+    var param = {
+      params:{
+        channelId:this.storage.get("user").id,
+        current: e,
+      }
+    };
+    Axios.get(api,param).then((res)=>{
+      console.log(res)
+      this.list=res.data.records;
+
+      this.current = res.data.pages;
+      this.size = res.data.size;
+      this.total = res.data.total;
+      this.model = res.data.current;
+
+    }).catch((err)=>{
+      console.log(err)
+    })
   }
   
   handle(time: number) {
