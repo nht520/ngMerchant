@@ -51,13 +51,13 @@ export class HomeComponent implements OnInit {
     {
       id:0,
       title:"今日统计",
-      icon:"home",
+      icon:"area-chart",
       path:"daystatistics",
     },
     {
       id:1,
       title:"历史统计",
-      icon:"home",
+      icon:"area-chart",
       path:"historystatistics",
     },
     // {
