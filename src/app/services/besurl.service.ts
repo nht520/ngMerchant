@@ -18,6 +18,7 @@ export class BesurlService {
     //统计渠道概述【日期】
     channelsummzrize:this.api+'/report/channelOverview',
     daystatistics:this.api+'/report',
+    channel:this.api+'/channel',
   }
 
   // 封装方法

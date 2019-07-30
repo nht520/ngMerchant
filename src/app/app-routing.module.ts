@@ -10,6 +10,9 @@ import { ProductComponent } from './components/product/product.component';
 import { BusstatisticsComponent } from './components/busstatistics/busstatistics.component';
 import { DaystatisticsComponent } from './components/daystatistics/daystatistics.component';
 import { HistorystatisticsComponent } from './components/historystatistics/historystatistics.component';
+import {BindingcardComponent} from "./components/bindingcard/bindingcard.component";
+import {SettlementComponent} from "./components/settlement/settlement.component";
+
 const routes: Routes = [
   {
     path :'',
@@ -26,6 +29,14 @@ const routes: Routes = [
       {
         path :'historystatistics',
         component : HistorystatisticsComponent
+      },
+      {
+        path :'bindingcard',
+        component : BindingcardComponent
+      },
+      {
+        path :'settlement',
+        component : SettlementComponent
       },
       {
         path :'about',

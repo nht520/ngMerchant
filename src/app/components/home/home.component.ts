@@ -64,13 +64,13 @@ export class HomeComponent implements OnInit {
       id:2,
       title:"绑定银行卡",
       icon:"area-chart",
-      path:"busstatistics",
+      path:"bindingcard",
     },
     {
       id:3,
       title:"结算",
       icon:"area-chart",
-      path:"busstatistics",
+      path:"settlement",
     },
 
     // {
