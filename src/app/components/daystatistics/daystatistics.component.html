@@ -26,10 +26,12 @@
   <el-table  [model]="list" >
       <el-table-column model-key="date" label="日期"  [render-html]="true"></el-table-column>
       <el-table-column model-key="packageNo" label="包名"></el-table-column>
-      <el-table-column model-key="revenue" label="收益" > </el-table-column>
+      <el-table-column model-key="channelRevenue" label="收益" > </el-table-column>
+    <el-table-column model-key="channelPayCount" label="效果数" > </el-table-column>
+    <el-table-column model-key="installCount" label="新增会员" > </el-table-column>
   </el-table>
   <div el-row class="statistics">
-      <span>累计：99999</span>
+      <span>累计：{{total}}</span>
   </div> 
     
   <!-- <nz-table [nzData]="list"  >

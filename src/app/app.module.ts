@@ -33,6 +33,7 @@ import { ProductComponent } from './components/product/product.component';
 import { BusstatisticsComponent } from './components/busstatistics/busstatistics.component';
 import { DaystatisticsComponent } from './components/daystatistics/daystatistics.component';
 import { HistorystatisticsComponent } from './components/historystatistics/historystatistics.component';
+import { BindingcardsComponent } from './bindingcards/bindingcards.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -49,7 +50,8 @@ registerLocaleData(en);
     ProductComponent,
     BusstatisticsComponent,
     DaystatisticsComponent,
-    HistorystatisticsComponent
+    HistorystatisticsComponent,
+    BindingcardsComponent
   ],
   imports: [
     BrowserModule,

@@ -60,12 +60,19 @@ export class HomeComponent implements OnInit {
       icon:"area-chart",
       path:"historystatistics",
     },
-    // {
-    //   id:4,
-    //   title:"统计",
-    //   icon:"area-chart",
-    //   path:"busstatistics",
-    // },
+    {
+      id:2,
+      title:"绑定银行卡",
+      icon:"area-chart",
+      path:"busstatistics",
+    },
+    {
+      id:3,
+      title:"结算",
+      icon:"area-chart",
+      path:"busstatistics",
+    },
+
     // {
     //   id:0,
     //   title:"首页",

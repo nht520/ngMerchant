@@ -18,6 +18,7 @@ export class HistorystatisticsComponent implements OnInit {
   total:any;
   model = 1;
   pages:any=[];
+  totalAmount:number = 0;
   constructor( public storage:StorageService, public busurl:BesurlService) { }
   usertext(){
     this.text = this.storage.get("navlist");
@@ -42,7 +43,9 @@ export class HistorystatisticsComponent implements OnInit {
       this.size = res.data.size;
       this.total = res.data.total;
       this.model = res.data.current;
-      
+      for(let i=0;i<this.list.length;i++){
+        this.totalAmount = Number(this.totalAmount) + Number(this.list[i].revenue);
+      }
     }).catch((err)=>{
       console.log(err)
     })

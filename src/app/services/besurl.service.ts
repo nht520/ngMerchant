@@ -4,10 +4,10 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class BesurlService {
-  api: any = 'http://47.75.163.229:9996';
+  // api: any = 'http://47.75.163.229:9996';
   // api: any = 'http://2h1037w727.51mypc.cn:41884';
   // api: any = 'http://192.168.1.7:9996';
-  // api: any = 'http://192.168.1.7:9996';
+  api: any = 'http://192.168.1.7:9996';
   // api:any='http://47.75.163.229:9996';
   // domainone:string = 'http://wx.bomao.xyz:8181/distributor';
   constructor(public http: HttpClient) { }
