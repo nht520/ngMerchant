@@ -11,12 +11,12 @@ import Axios from "axios";
 export class BindingcardComponent implements OnInit {
 
   crumbstitle:any = "绑定银行卡";
-  text:any;
+  text: any;
   list: any[] = [];
-  timeone:any;
-  timetwo:any;
-  show:false;
-  total:number = 0;
+  timeone: any;
+  timetwo: any;
+  show: boolean;
+  total: number = 0;
 
   id: any;
   merchantBank: any;
@@ -59,7 +59,7 @@ export class BindingcardComponent implements OnInit {
     }
   }
   addbank(){
-    this.show=true;
+
     this.id = '';
     this.merchantBank = '';
     this.merchantBranch = '';
@@ -67,9 +67,10 @@ export class BindingcardComponent implements OnInit {
     this.merchantBankAccount = '';
     this.merchantBankProvince = '';
     this.merchantBankCity = '';
+    this.show = true;
   }
   updateData(){
-    this.show = false;
+
     const api=this.busurl.window.channel+'/updateBank';
     let _param = new URLSearchParams();
     _param.append("id",this.id);
@@ -80,13 +81,15 @@ export class BindingcardComponent implements OnInit {
     _param.append("merchantBankProvince",this.merchantBankProvince);
     _param.append("merchantBankCity",this.merchantBankCity);
     Axios.post(api,_param).then((res)=>{
+      this.show = false;
       this.userlist();
-      this.card.toggle2 = false
+      // this.card.toggle2 = false
     }).catch((err)=>{
     })
   }
+
   add(){
-    this.show = false;
+
     const api=this.busurl.window.channel+'/addBank';
     let _param = new URLSearchParams();
     _param.append("merchantId",this.storage.get("user").id);
@@ -97,8 +100,9 @@ export class BindingcardComponent implements OnInit {
     _param.append("merchantBankProvince",this.merchantBankProvince);
     _param.append("merchantBankCity",this.merchantBankCity);
     Axios.post(api,_param).then((res)=>{
+      this.show = false;
       this.userlist();
-      this.card.toggle2 = false
+      // this.card.toggle2 = false
     }).catch((err)=>{
     })
   }

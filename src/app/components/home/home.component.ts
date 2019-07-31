@@ -68,11 +68,16 @@ export class HomeComponent implements OnInit {
     },
     {
       id:3,
-      title:"结算",
+      title:"申请结算",
       icon:"area-chart",
       path:"settlement",
     },
-
+    {
+      id:4,
+      title:"结算记录",
+      icon:"area-chart",
+      path:"settlementlist",
+    },
     // {
     //   id:0,
     //   title:"首页",

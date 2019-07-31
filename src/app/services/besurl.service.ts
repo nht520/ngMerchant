@@ -19,6 +19,8 @@ export class BesurlService {
     channelsummzrize:this.api+'/report/channelOverview',
     daystatistics:this.api+'/report',
     channel:this.api+'/channel',
+    settlement: this.api+'/settlement',
+    settlementList: this.api+'/settlementList',
   }
 
   // 封装方法

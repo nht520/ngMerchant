@@ -1,3 +1,46 @@
-<p>
-  settlement works!
-</p>
+
+<app-breadcrumb  [crumbstitle]= "crumbstitle" [text]= "text"></app-breadcrumb>
+<div id="bodypading">
+<div el-row gutter="20">
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple">可提现:{{settlementAmount}}</div>
+  </div>
+  <div el-col span="6">
+    <div class="grid-content bg-purple">结算:T+1</div>
+  </div>
+</div>
+
+  <div el-row gutter="24">
+    <div el-col [span]="3">
+      请输入提现金额:
+    </div>
+    <div el-col span="5">
+      <el-input [(ngModel)]="cashAmount" placeholder="请输入提现金额"></el-input>
+    </div>
+  </div>
+  <div el-row gutter="24">
+    <div el-col [span]="3">
+      选择结算银行卡:
+    </div>
+    <div el-col span="5">
+      <el-select [(ngModel)]="bankId" placeholder="请选择">
+        <el-option *ngFor="let item of bankList"
+                   [label]="item.merchantBankAccount"
+                   [value]="item.id">
+        </el-option>
+      </el-select>
+    </div>
+  </div>
+  <div el-row gutter="24">
+    <div el-col [span]="3">
+      支付密码:
+    </div>
+    <div el-col span="5">
+      <el-input [(ngModel)]="payPass" placeholder="请输入支付密码"></el-input>
+    </div>
+  </div>
+  <div el-row gutter="24">
+    <el-button type="primary" (click)="cashSettlement()" >提现</el-button>
+  </div>
+
+
