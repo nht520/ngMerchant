@@ -1,0 +1,60 @@
+<!-- 面包屑 -->
+<app-breadcrumb  [crumbstitle]= "crumbstitle" [text]= "text"></app-breadcrumb>
+<div id="bodypading">
+  <!-- 搜索 -->
+  <div nz-row class="search">
+    <div nz-col nzSpan="4">
+      <el-date-picker
+        (modelChange)="handle($event)"
+        (clear-click)="clearClickHandle($event)">
+      </el-date-picker>
+    </div>
+    <div nz-col nzSpan="4">
+      <el-date-picker
+        (modelChange)="handone($event)"
+        (clear-click)="clearClickHandle($event)">
+      </el-date-picker>
+    </div>
+    <div nz-col nzSpan="2">
+      <button  nz-button nzType="primary" (click)="searchClick()">
+        <i nz-icon type="search"></i>搜索
+      </button>
+    </div>
+  </div>
+  <!-- 表格 -->
+  <el-table  [model]="list" >
+    <el-table-column model-key="applyTime" label="申请时间"  [render-html]="true"></el-table-column>
+    <el-table-column model-key="settlementAmount" label="结算金额"></el-table-column>
+    <el-table-column model-key="serviceCharge" label="手续费" > </el-table-column>
+    <el-table-column model-key="amountOnAccount" label="到账金额" > </el-table-column>
+    <el-table-column model-key="merchantBank" label="银行名称" > </el-table-column>
+    <el-table-column model-key="merchantBranch" label="支行名称" > </el-table-column>
+    <el-table-column model-key="merchantBankAccount" label="银行卡号" > </el-table-column>
+    <el-table-column model-key="merchantPayee" label="户名" > </el-table-column>
+    <el-table-column model-key="merchantBankProvince" label="所属省" > </el-table-column>
+    <el-table-column model-key="merchantBankCity" label="所属市" > </el-table-column>
+    <el-table-column model-key="handleTime" label="处理时间" > </el-table-column>
+    <el-table-column  label="状态" >
+      <ng-template #slot let-scope="scope">
+        {{scope.rowData.settlementStatus==0?"未到账":"已到账"}}
+      </ng-template>
+
+    </el-table-column>
+
+
+  </el-table>
+
+<!--  <div el-row class="statistics">-->
+<!--    <span>累计：{{totalAmount}}</span>-->
+<!--  </div>-->
+  <!-- 分业 -->
+  <ul class="list">
+    <li>
+      <el-pagination [total]="total"
+                     (modelChange)="nav($event)"
+                     [layout]="['prev', 'pager','jumper', 'next', 'total']">
+      </el-pagination>
+    </li>
+  </ul>
+
+</div>
