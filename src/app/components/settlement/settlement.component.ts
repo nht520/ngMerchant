@@ -12,7 +12,7 @@ export class SettlementComponent implements OnInit {
   crumbstitle: any = "申请结算";
   text: any;
   settlementAmount: number = 0;//可结算金额
-  cashAmount: number;//提现金额
+  cashAmount: string;//提现金额
   bankList: any;
   payPass: any;
   bankId: any
@@ -50,7 +50,7 @@ export class SettlementComponent implements OnInit {
     const api = this.busurl.window.settlement+'/cashSettlement';
     let param = new URLSearchParams();
     param.append("channelId",this.storage.get("user").id);
-    param.append("cashAmount",this.cashAmount);
+    param.append("cashAmount", this.cashAmount);
     param.append("bankId",this.bankId);
     param.append("payPass",this.payPass);
     Axios.post(api,param).then((res)=>{

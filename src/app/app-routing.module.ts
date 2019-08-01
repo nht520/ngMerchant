@@ -66,12 +66,12 @@ const routes: Routes = [
       // 路由默认页面
       {
         path : '**',
-        redirectTo : 'daystatistics'
+        redirectTo : 'historystatistics'
       },
     ]
   },
   {
-    path: '**', redirectTo: 'daystatistics'
+    path: '**', redirectTo: 'historystatistics'
   }
 
 ];

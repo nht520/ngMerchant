@@ -48,15 +48,15 @@ export class HomeComponent implements OnInit {
   //   }
   // ]
   items: any = [
-    {
-      id:0,
-      title:"今日统计",
-      icon:"area-chart",
-      path:"daystatistics",
-    },
+    // {
+    //   id:0,
+    //   title:"今日统计",
+    //   icon:"area-chart",
+    //   path:"daystatistics",
+    // },
     {
       id:1,
-      title:"历史统计",
+      title:"统计",
       icon:"area-chart",
       path:"historystatistics",
     },
