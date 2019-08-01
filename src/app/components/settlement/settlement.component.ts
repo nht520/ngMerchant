@@ -31,6 +31,7 @@ export class SettlementComponent implements OnInit {
       console.log(err);
     });
   }
+  
   findAllBank(){
     const api = this.busurl.window.channel+'/findBankAll';
     let param = {

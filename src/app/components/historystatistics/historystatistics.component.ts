@@ -18,6 +18,28 @@ export class HistorystatisticsComponent implements OnInit {
   total:any;
   model = 1;
   pages:any=[];
+  listone:any=[
+    {
+      id:0,
+      name:"10",
+    },
+    {
+      id:1,
+      name:"10",
+    },
+    {
+      id:2,
+      name:"10",
+    },
+    {
+      id:3,
+      name:"10",
+    },
+    {
+      id:4,
+      name:"10",
+    }
+  ];
   totalAmount:number = 0;
   constructor( public storage:StorageService, public busurl:BesurlService) { }
   usertext(){
