@@ -40,14 +40,32 @@ export class HistorystatisticsComponent implements OnInit {
       name:"10",
     }
   ];
-  totalAmount:number = 0;
+  totalAmount: number = 0;
+  payCountTotal: number = 0;
+  installCountTotal: number = 0;
+  packageNo: any;
+  settlementAmount:any;
+
   constructor( public storage:StorageService, public busurl:BesurlService) { }
   usertext(){
-    this.text = this.storage.get("navlist");
+    this.searchSettlement();
+
   }
   ngOnInit() {
     this.usertext();
     this.userlist();
+  }
+  searchSettlement(){
+    const api = this.busurl.window.settlement+'/channelSettlement';
+    let param = new URLSearchParams();
+    param.append("channelId",this.storage.get("user").id);
+    Axios.post(api,param).then((res)=>{
+      // console.log(res);
+      this.settlementAmount = res.data.data.settlementAmount;
+      this.text = this.storage.get("navlist")+",可提现统计："+this.settlementAmount;
+    }).catch((err)=>{
+      console.log(err);
+    });
   }
   // 列表
   userlist(){
@@ -55,6 +73,7 @@ export class HistorystatisticsComponent implements OnInit {
     var param = {
       params:{
         channelId:this.storage.get("user").id,
+        packageNo:this.packageNo,
       }
     };
     Axios.get(api,param).then((res)=>{
@@ -65,8 +84,13 @@ export class HistorystatisticsComponent implements OnInit {
       this.size = res.data.size;
       this.total = res.data.total;
       this.model = res.data.current;
+      this.totalAmount = 0;
+      this.payCountTotal = 0;
+      this.installCountTotal = 0;
       for(let i=0;i<this.list.length;i++){
-        this.totalAmount = Number(this.totalAmount) + Number(this.list[i].revenue);
+        this.totalAmount = Number(this.totalAmount) + Number(this.list[i].channelRevenue);
+        this.payCountTotal = Number(this.payCountTotal) + Number(this.list[i].channelPayCount);
+        this.installCountTotal = Number(this.installCountTotal) + Number(this.list[i].installCount);
       }
     }).catch((err)=>{
       console.log(err)
@@ -80,8 +104,10 @@ export class HistorystatisticsComponent implements OnInit {
       params:{
         channelId:this.storage.get("user").id,
         current:e,
+        packageNo :this.packageNo
       }
     };
+    this.list = [];
     Axios.get(api,param).then((res)=>{
       console.log(res)
       this.list=res.data.records;
@@ -89,7 +115,15 @@ export class HistorystatisticsComponent implements OnInit {
       this.size = res.data.size;
       this.total = res.data.total;
       this.model = res.data.current;
-      
+      this.totalAmount = 0;
+      this.payCountTotal = 0;
+      this.installCountTotal = 0;
+
+      for(let i=0;i<this.list.length;i++){
+        this.totalAmount = Number(this.totalAmount) + Number(this.list[i].channelRevenue);
+        this.payCountTotal = Number(this.payCountTotal) + Number(this.list[i].channelPayCount);
+        this.installCountTotal = Number(this.installCountTotal) + Number(this.list[i].installCount);
+      }
     }).catch((err)=>{
       console.log(err)
     })
@@ -118,8 +152,10 @@ export class HistorystatisticsComponent implements OnInit {
         current:1,
         startTime:this.timeone,
         endTime:this.timetwo,
+        packageNo:this.packageNo
       }
     };
+    this.list = [];
     Axios.get(api,param).then((res)=>{
       console.log(res)
       this.list=res.data.records;
@@ -127,6 +163,15 @@ export class HistorystatisticsComponent implements OnInit {
       this.size = res.data.size;
       this.total = res.data.total;
       this.model = res.data.current;
+      this.totalAmount = 0;
+      this.totalAmount = 0;
+      this.payCountTotal = 0;
+      this.installCountTotal = 0;
+      for(let i=0;i<this.list.length;i++){
+        this.totalAmount = Number(this.totalAmount) + Number(this.list[i].channelRevenue);
+        this.payCountTotal = Number(this.payCountTotal) + Number(this.list[i].channelPayCount);
+        this.installCountTotal = Number(this.installCountTotal) + Number(this.list[i].installCount);
+      }
     }).catch((err)=>{
       console.log(err)
     })

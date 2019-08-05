@@ -12,6 +12,8 @@ import { DaystatisticsComponent } from './components/daystatistics/daystatistics
 import { HistorystatisticsComponent } from './components/historystatistics/historystatistics.component';
 import {BindingcardComponent} from "./components/bindingcard/bindingcard.component";
 import {SettlementComponent} from "./components/settlement/settlement.component";
+import {SettlementlistComponent} from "./components/settlementlist/settlementlist.component";
+import {OrderComponent} from "./components/order/order.component";
 
 const routes: Routes = [
   {
@@ -31,23 +33,31 @@ const routes: Routes = [
         component : HistorystatisticsComponent
       },
       {
-        path :'bindingcard',
+        path : 'bindingcard',
         component : BindingcardComponent
       },
       {
-        path :'settlement',
+        path : 'settlement',
         component : SettlementComponent
       },
       {
-        path :'about',
+        path : 'settlementlist',
+        component : SettlementlistComponent
+      },
+      {
+        path: 'order',
+        component: OrderComponent
+      },
+      {
+        path : 'about',
         component : AboutComponent
       },
       {
-        path :'class',
+        path : 'class',
         component : ClassComponent
       },
       {
-        path :'statistics',
+        path : 'statistics',
         component : StatisticsComponent
       },
       {

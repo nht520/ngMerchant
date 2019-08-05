@@ -21,6 +21,7 @@ export class BesurlService {
     channel:this.api+'/channel',
     settlement: this.api+'/settlement',
     settlementList: this.api+'/settlementList',
+    order: this.api+'/pay',
   }
 
   // 封装方法

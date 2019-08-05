@@ -35,6 +35,8 @@ import { DaystatisticsComponent } from './components/daystatistics/daystatistics
 import { HistorystatisticsComponent } from './components/historystatistics/historystatistics.component';
 import { BindingcardComponent } from './components/bindingcard/bindingcard.component';
 import { SettlementComponent } from './components/settlement/settlement.component';
+import {SettlementlistComponent} from "./components/settlementlist/settlementlist.component";
+import { OrderComponent } from './components/order/order.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -54,6 +56,8 @@ registerLocaleData(en);
     HistorystatisticsComponent,
     BindingcardComponent,
     SettlementComponent,
+    SettlementlistComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,9 @@
         (clear-click)="clearClickHandle($event)">
       </el-date-picker>
     </div>
+    <div nz-col nzSpan="4">
+      <el-input [(model)]="packageNo" placeholder="请输入包号"></el-input>
+    </div>
     <div nz-col nzSpan="2">
       <button  nz-button nzType="primary" (click)="searchClick()">
         <i nz-icon type="search"></i>搜索
@@ -62,8 +65,8 @@
         <li style="color: #ffffff">1</li>
         <li style="color: #ffffff">1</li>
         <li>累计：{{totalAmount}}</li>
-        <li>累计：{{totalAmount}}</li>
-        <li>累计：{{totalAmount}}</li>
+        <li>累计：{{payCountTotal}}</li>
+        <li>累计：{{installCountTotal}}</li>
       </ul>
   </div>
   <!-- 分业 -->
