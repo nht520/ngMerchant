@@ -14,6 +14,7 @@ import {BindingcardComponent} from "./components/bindingcard/bindingcard.compone
 import {SettlementComponent} from "./components/settlement/settlement.component";
 import {SettlementlistComponent} from "./components/settlementlist/settlementlist.component";
 import {OrderComponent} from "./components/order/order.component";
+import { PackagemangentComponent } from './components/packagemangent/packagemangent.component';
 
 const routes: Routes = [
   {
@@ -25,11 +26,11 @@ const routes: Routes = [
     component : HomeComponent,
     children: [
       {
-        path:'daystatistics',
+        path: 'daystatistics',
         component:DaystatisticsComponent
       },
       {
-        path :'historystatistics',
+        path : 'historystatistics',
         component : HistorystatisticsComponent
       },
       {
@@ -61,12 +62,16 @@ const routes: Routes = [
         component : StatisticsComponent
       },
       {
-        path :'product',
+        path : 'product',
         component : ProductComponent
       },
       {
-        path :'busstatistics',
+        path : 'busstatistics',
         component : BusstatisticsComponent
+      },
+      {
+        path : 'packagemangent',
+        component : PackagemangentComponent
       },
       // 路由默认页面
       {

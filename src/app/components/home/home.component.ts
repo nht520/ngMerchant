@@ -83,6 +83,11 @@ export class HomeComponent implements OnInit {
       title:"订单记录",
       icon:"area-chart",
       path:"order",
+    },{
+      id:5,
+      title : "包管理",
+      icon : "area-chart",
+      path : "packagemangent",
     }
     // {
     //   id:0,
