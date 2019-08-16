@@ -23,6 +23,11 @@
         <i nz-icon type="search"></i>搜索
       </button>
     </div>
+    <div nz-col nzSpan="2">
+      <button  nz-button nzType="primary" (click)="synClick()">
+        <i nz-icon type="search"></i>同步
+      </button>
+    </div>
   </div>
   <!-- 表格 -->
   <el-table  [model]="list" >

@@ -55,6 +55,18 @@ export class HistorystatisticsComponent implements OnInit {
     this.usertext();
     this.userlist();
   }
+  synClick(){
+    const api = this.busurl.window.daystatistics+'/synchronizationData';
+    let param = new URLSearchParams();
+    param.append("channelId",this.storage.get("user").id);
+    Axios.post(api,param).then((res)=>{
+      console.log(res);
+      alert("同步成功");
+      this.userlist();
+    }).catch((err)=>{
+      console.log(err);
+    })
+  }
   searchSettlement(){
     const api = this.busurl.window.settlement+'/channelSettlement';
     let param = new URLSearchParams();
