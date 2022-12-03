@@ -1711,8 +1711,8 @@ decamelize@^2.0.0:
     xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
 
 deep-equal@^1.0.1:
   version "1.0.1"
@@ -1893,6 +1893,10 @@ ee-first@1.1.1:
 electron-to-chromium@^1.3.150:
   version "1.3.163"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.163.tgz#7fc3d637f5d8fa4ca4a052cad0de7675bd98b911"
+
+element-angular@^0.7.6:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/element-angular/-/element-angular-0.7.6.tgz#9988006a0920dfd193915b841ed8b3d35d2906ac"
 
 elliptic@^6.0.0:
   version "6.4.1"
